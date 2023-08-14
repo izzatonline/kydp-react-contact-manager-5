@@ -33,7 +33,7 @@ function App() {
             <AddContact addContactHandler={addContactHandler} />
             <ContactList
                 contacts={contacts}
-                getContactID={removeContactHandler}
+                getContactId={removeContactHandler}
             />
         </div>
     );
