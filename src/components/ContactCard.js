@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import usericon from "../images/usericon.png";
 
 const ContactCard = (props) => {
@@ -13,19 +14,33 @@ const ContactCard = (props) => {
                     <img src={usericon} alt="user" />
                 </div>
                 <div className="content">
-                    <br />
-                    <div className="header">{name}</div>
-                    <div>{email}</div>
-                </div>
-                <div className="button">
-                    <i
-                        className="right trash icon"
-                        style={{
-                            color: "red",
-                            margin: "7px",
+                    <Link
+                        to={{
+                            pathname: `/contact/${id}`,
+                            state: { contact: props.contact },
                         }}
-                        onClick={() => props.clickHandler(id)}
-                    ></i>
+                    >
+                        <br />
+                        <div className="header">{name}</div>
+                        <div>{email}</div>
+                    </Link>
+                </div>
+                <div className="delete">
+                    <Link
+                        to={{
+                            pathname: `/delete/${id}`,
+                            state: { contact: props.contact },
+                        }}
+                    >
+                        <i
+                            className="right alternate trash icon"
+                            style={{
+                                color: "red",
+                                margin: "7px",
+                            }}
+                            onClick={() => props.clickHandler(id)}
+                        ></i>
+                    </Link>
                 </div>
             </div>
         </div>
