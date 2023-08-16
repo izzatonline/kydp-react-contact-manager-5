@@ -4,6 +4,7 @@ import usericon from "../images/usericon.png";
 
 const ContactCard = (props) => {
     const { id, name, email } = props.contact;
+
     return (
         <div className="ui divided items">
             <div className="item">
@@ -38,7 +39,6 @@ const ContactCard = (props) => {
                                 color: "red",
                                 margin: "7px",
                             }}
-                            onClick={() => props.clickHandler(id)}
                         ></i>
                     </Link>
                 </div>

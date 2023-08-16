@@ -22,7 +22,7 @@ const DeleteContact = (props) => {
                     <Link to="/">
                         <button
                             className="ui button blue center"
-                            onClick={() => props.clickHandler(id)}
+                            onClick={() => props.removeContactHandler(id)}
                         >
                             YES
                         </button>
