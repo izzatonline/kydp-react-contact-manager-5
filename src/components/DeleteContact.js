@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import usericon from "../images/usericon.png";
 
 const DeleteContact = (props) => {
-    console.log(props);
     const { id, name, email } = props.location.state.contact;
     return (
         <div className="main">
