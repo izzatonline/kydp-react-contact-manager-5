@@ -26,6 +26,23 @@ const ContactCard = (props) => {
                         <div>{email}</div>
                     </Link>
                 </div>
+                <div className="edit">
+                    <Link
+                        to={{
+                            pathname: `/edit`,
+                            state: { contact: props.contact },
+                        }}
+                    >
+                        <i
+                            className="edit alternate outline icon"
+                            style={{
+                                color: "blue",
+                                margin: "7px",
+                                marginLeft: "10px",
+                            }}
+                        ></i>
+                    </Link>
+                </div>
                 <div className="delete">
                     <Link
                         to={{
@@ -38,23 +55,6 @@ const ContactCard = (props) => {
                             style={{
                                 color: "red",
                                 marginTop: "7px",
-                                marginLeft: "10px",
-                            }}
-                        ></i>
-                    </Link>
-                </div>
-                <div className="delete">
-                    <Link
-                        to={{
-                            pathname: `/edit`,
-                            state: { contact: props.contact },
-                        }}
-                    >
-                        <i
-                            className="edit alternate outline icon"
-                            style={{
-                                color: "blue",
-                                margin: "7px",
                                 marginLeft: "10px",
                             }}
                         ></i>
