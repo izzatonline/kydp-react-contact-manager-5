@@ -16,10 +16,8 @@ const ContactCard = (props) => {
                 </div>
                 <div className="content">
                     <Link
-                        to={{
-                            pathname: `/contact/${id}`,
-                            state: { contact: props.contact },
-                        }}
+                        to={`/contact/${id}`}
+                        state={{ contact: props.contact }}
                     >
                         <br />
                         <div className="header">{name}</div>
@@ -27,12 +25,7 @@ const ContactCard = (props) => {
                     </Link>
                 </div>
                 <div className="edit">
-                    <Link
-                        to={{
-                            pathname: `/edit`,
-                            state: { contact: props.contact },
-                        }}
-                    >
+                    <Link to={`/edit/${id}`}>
                         <i
                             className="edit alternate outline icon"
                             style={{
@@ -45,10 +38,8 @@ const ContactCard = (props) => {
                 </div>
                 <div className="delete">
                     <Link
-                        to={{
-                            pathname: `/delete/${id}`,
-                            state: { contact: props.contact },
-                        }}
+                        to={`/delete/${id}`}
+                        state={{ contact: props.contact }}
                     >
                         <i
                             className="trash alternate outline icon"

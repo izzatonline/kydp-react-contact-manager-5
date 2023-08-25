@@ -1,9 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import usericon from "../images/usericon.png";
+import { useContactsCrud } from "../context/ContactsCrudContext";
 
-const DeleteContact = (props) => {
-    const { id, name, email } = props.location.state.contact;
+const DeleteContact = () => {
+    const { id } = useParams();
+    const location = useLocation();
+    const { name, email } = location.state.contact;
+    const { removeContactHandler } = useContactsCrud();
+
+    const deleteContact = (id) => {
+        removeContactHandler(id);
+    };
+
     return (
         <div className="main">
             <div className="ui card centered">
@@ -11,8 +20,8 @@ const DeleteContact = (props) => {
                     <img src={usericon} alt="user" />
                 </div>
                 <div className="content">
-                    <div className="header">{name} </div>
-                    <div className="description">{email} </div>
+                    <div className="header">{name}</div>
+                    <div className="description">{email}</div>
                 </div>
             </div>
             <h1 className="center-div">
@@ -21,7 +30,7 @@ const DeleteContact = (props) => {
                     <Link to="/">
                         <button
                             className="ui button blue center"
-                            onClick={() => props.removeContactHandler(id)}
+                            onClick={() => deleteContact(id)}
                         >
                             YES
                         </button>
